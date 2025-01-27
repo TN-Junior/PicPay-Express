@@ -2,12 +2,10 @@ package com.picpayproject.apiresfull.domain.transaction;
 
 import com.picpayproject.apiresfull.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity(name = "transactions")
@@ -15,6 +13,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id" )
 public class Transaction {
 
@@ -32,7 +31,7 @@ public class Transaction {
     @JoinColumn(name = "receiver_id")
     private User receiver;
 
-    private LocalTime timestamp;
+    private LocalDateTime timestamp;
 
 
 }
